@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -13,18 +12,16 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent, children: [
     { path: 'profile', component: ProfileComponent }
   ]},
-
   { path: 'contact', component: ContactComponent },
   { 
     path: 'admin', 
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), 
-    canActivate: [AdminGuard]  // ✅ Apply Guard Here
+    canActivate: [AdminGuard]  // Protects admin route
   }
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [RouterModule.forRoot(routes), CommonModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

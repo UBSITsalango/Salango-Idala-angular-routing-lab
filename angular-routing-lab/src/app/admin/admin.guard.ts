@@ -12,13 +12,8 @@ export class AdminGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // Simulated authentication logic
-    const isAuthenticated = false; // Change this to your actual authentication check
+    const isAdmin = false; // Change to actual authentication logic
 
-    if (isAuthenticated) {
-      return true; // Allow access
-    } else {
-      return this.router.parseUrl('/home'); // Redirect unauthorized users
-    }
+    return isAdmin ? true : this.router.parseUrl('/home'); // Redirect unauthorized users
   }
 }
