@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './about/profile/profile.component';
+import { AdminGuard } from './admin/admin.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +15,12 @@ const routes: Routes = [
   ]},
 
   { path: 'contact', component: ContactComponent },
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }];
+  { 
+    path: 'admin', 
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), 
+    canActivate: [AdminGuard]  // ✅ Apply Guard Here
+  }
+];
 
 @NgModule({
   declarations: [],
