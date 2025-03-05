@@ -1,17 +1,24 @@
-import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
-import { adminGuard } from './admin.guard';
+@Injectable({
+  providedIn: 'root'
+})
+export class AdminGuard implements CanActivate {
+  constructor(private router: Router) {}
 
-describe('adminGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => adminGuard(...guardParameters));
+  canActivate(
+    next: ActivatedRouteSnapshot,  // ✅ Add this parameter
+    state: RouterStateSnapshot     // ✅ Add this parameter
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    const isAuthenticated = false; // Change this to actual authentication logic
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-  });
+    if (!isAuthenticated) {
+      this.router.navigate(['/home']); // Redirect to home if not authenticated
+      return false;
+    }
 
-  it('should be created', () => {
-    expect(executeGuard).toBeTruthy();
-  });
-});
+    return true;
+  }
+}

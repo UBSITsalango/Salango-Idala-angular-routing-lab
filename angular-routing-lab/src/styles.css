@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootswatch/dist/sketchy/bootstrap.min.css';
+/* General Styling */
+body {
+    background-color: #f8f9fa;
+  }
+  
+  /* Navbar */
+  .navbar {
+    border-bottom: 3px solid #ffc107;
+  }
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    transition: color 0.3s;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+  }
+  
+  /* Home Page */
+  .home-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .home-container h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .home-container p {
+    font-size: 1.4rem;
+    color: #333;
+  }
+  
+  /* Cards */
+  .card {
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  
