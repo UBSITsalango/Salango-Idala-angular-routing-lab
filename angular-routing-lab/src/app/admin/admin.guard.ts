@@ -1,23 +1,37 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { AuthService } from '../services/auth.service';
+import { CanActivate, Router, NavigationStart } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  private readonly adminPassword = 'secure123';
+  private isAuthenticated = false; // Reset this when navigating away
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.authService.isAdmin()) {  // Check if user is an admin
+  constructor(private router: Router) {
+    // Listen for navigation events to reset auth status
+    this.router.events.pipe(filter(event => event instanceof NavigationStart)).subscribe(() => {
+      this.isAuthenticated = false;
+    });
+  }
+
+  canActivate(): boolean {
+    if (this.isAuthenticated) return true; // Allow access if already authenticated
+
+    if (typeof window !== 'undefined') {
+      const userInput = window.prompt('Enter Admin Password:');
+
+      if (userInput !== this.adminPassword) {
+        window.alert('Incorrect password! Redirecting to Home.');
+        this.router.navigate(['/home']);
+        return false;
+      }
+
+      this.isAuthenticated = true; // Set auth flag
       return true;
-    } else {
-      alert("Access Denied: Admins only");  // Show alert if unauthorized
-      return this.router.createUrlTree(['/home']);  // Redirect non-admins to home
     }
+
+    return false;
   }
 }

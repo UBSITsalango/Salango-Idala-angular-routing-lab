@@ -9,8 +9,8 @@ export class AdminGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(
-    next: ActivatedRouteSnapshot,  // ✅ Add this parameter
-    state: RouterStateSnapshot     // ✅ Add this parameter
+    next: ActivatedRouteSnapshot,  // Add this parameter
+    state: RouterStateSnapshot     // Add this parameter
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const isAuthenticated = false; // Change this to actual authentication logic
 

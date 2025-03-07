@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootswatch/dist/sketchy/bootstrap.min.css';
 /* General Styling */
+html {
+  overflow-y: scroll; /* Always show vertical scrollbar */
+}
+
 body {
     background-image: linear-gradient(rgba(192, 192, 192, 0.5), rgba(82, 82, 82, 0.5)), url(https://static.vecteezy.com/system/resources/previews/024/743/302/non_2x/cat-seamless-pattern-paw-head-calico-black-kitten-scarf-isolated-repeat-wallpaper-cartoon-tile-background-illustration-vector.jpg);
     background-position: center;

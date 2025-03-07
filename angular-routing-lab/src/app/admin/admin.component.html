@@ -1,1 +1,51 @@
-<p>admin works!</p>
+<div class="container mt-4">
+    <div class="card shadow-lg border-dark">
+      <div class="card-header bg-primary text-white text-center">
+        <h2 class="fw-bold">🛠️ Admin Dashboard</h2>
+        <p class="lead">Manage the system with ease.</p>
+      </div>
+  
+      <div class="card-body">
+        <div class="row">
+          <!-- Users Management -->
+          <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">👥 Manage Users</h5>
+                <p class="card-text">Add, edit, or remove users.</p>
+                <button class="btn btn-primary">View Users</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Settings -->
+          <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">⚙️ Settings</h5>
+                <p class="card-text">Update system configurations.</p>
+                <button class="btn btn-warning">Edit Settings</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Reports -->
+          <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">📊 Reports</h5>
+                <p class="card-text">View system analytics & logs.</p>
+                <button class="btn btn-success">View Reports</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Logout Button -->
+      <div class="card-footer text-center">
+        <button class="btn btn-danger" (click)="logout()">🚪 Logout</button>
+      </div>
+    </div>
+</div>
+  

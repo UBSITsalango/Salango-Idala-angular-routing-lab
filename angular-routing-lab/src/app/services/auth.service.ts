@@ -4,9 +4,20 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private user = { isAdmin: true };
+  private isAdminUser = true;
+
+  constructor() {}
 
   isAdmin(): boolean {
-    return this.user.isAdmin;
+    return this.isAdminUser;
+  }
+
+  loginAsAdmin() {
+    this.isAdminUser = true;
+  }
+
+  logout() {
+    this.isAdminUser = false;
+    console.log('Admin logged out');
   }
 }
