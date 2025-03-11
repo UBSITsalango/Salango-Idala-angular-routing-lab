@@ -1,67 +1,25 @@
-/* Center the profile section */
-.card {
-    border-radius: 15px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Hover effect for profile cards */
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Style the card header */
-.card-header {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-/* Team member images */
-.card-img-top {
-    width: 120px;
-    height: 120px;
+.profile-img {
+    width: 160px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #ffffff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Card body text */
-.card-body {
-    font-size: 1.1rem;
-}
-
-/* Team member names */
-.card-title {
-    font-weight: bold;
-    color: #343a40;
-}
-
-/* Team member roles */
-.card-text {
-    font-style: italic;
-    color: #6c757d;
-}
-
-/* Back button styling */
-.btn-outline-primary {
-    border-radius: 30px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-outline-primary:hover {
-    background-color: #0d6efd;
-    color: white;
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-    .card {
-        margin-bottom: 20px;
-    }
-}
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.08);
+  }
+  
+  .bg-gradient {
+    background: linear-gradient(135deg, #007bff, #6610f2);
+  }
+  
+  .card {
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .alert {
+    max-width: 700px;
+    border-radius: 8px;
+  }
+  

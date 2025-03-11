@@ -1,43 +1,32 @@
-<div class="card shadow-lg border-dark mb-4">
-  <div class="card-header bg-info text-white text-center">
-    <h2 class="fw-bold">👤 User Profiles</h2>
-  </div>
-  <div class="card-body text-center">
-    
-    <div class="row justify-content-center g-4">
-      <!-- User 1 -->
-      <div class="col-md-4">
-        <div class="card text-center mx-auto" style="width: 18rem;">
-          <img src="https://images.unsplash.com/photo-1557447928-9a1ca5819ed6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
-               class="card-img-top rounded-circle p-3 mx-auto d-block" style="width: 150px; height: 150px;" alt="Tyrone Salango">
-          <div class="card-body">
-            <h4 class="fw-bold">Tyrone Salango</h4>
-            <p class="text-muted">Full-Stack Developer | Passionate about creating amazing applications</p>
-            <div class="alert alert-light">
-              <strong>📍 Location:</strong> Baguio, Philippines <br>
-              <strong>📧 Email:</strong> tyrone&#64;example.com <br>
-              <strong>📞 Contact:</strong> 0912-345-6789
-            </div>
-          </div>
-        </div>
+<div class="container mt-5">
+  <div class="card shadow-lg border-0 rounded-lg overflow-hidden">
+
+    <!-- Profile Header -->
+    <div class="card-header bg-gradient text-black text-center p-4">
+      <h2 class="fw-bold">Profile</h2>
+    </div>
+
+    <!-- Profile Content -->
+    <div class="card-body d-flex flex-column align-items-center p-5">
+      <img [src]="userImage"
+           class="rounded-circle border border-3 border-primary p-1 profile-img"
+           alt="User Image">
+      
+      <!-- User Info -->
+      <h2 class="fw-bold mt-3">{{ userName }}</h2>
+      <p class="text-muted fst-italic fs-5">{{ userRole }}</p>
+
+      <!-- User Details -->
+      <div class="alert alert-light text-center w-100 p-4 shadow-sm">
+        <p class="mb-3"><strong>📍 Location:</strong> {{ userLocation }}</p>
+        <p class="mb-3"><strong>📧 Email:</strong> <a href="mailto:{{ userEmail }}" class="text-decoration-none text-primary"> {{ userEmail }}</a></p>
+        <p class="mb-3"><strong>📞 Contact:</strong> <a href="tel:{{ userContact }}" class="text-decoration-none text-dark"> {{ userContact }}</a></p>
       </div>
 
-      <!-- User 2 -->
-      <div class="col-md-4">
-        <div class="card text-center mx-auto" style="width: 18rem;">
-          <img src="https://images.unsplash.com/photo-1550747528-cdb45925b3f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
-               class="card-img-top rounded-circle p-3 mx-auto d-block" style="width: 150px; height: 150px;" alt="Ashley Idala">
-          <div class="card-body">
-            <h4 class="fw-bold">Ashley Idala</h4>
-            <p class="text-muted">UI Designer | Loves crafting beautiful and user-friendly interfaces</p>
-            <div class="alert alert-light">
-              <strong>📍 Location:</strong> Baguio, Philippines <br>
-              <strong>📧 Email:</strong> ashley&#64;example.com <br>
-              <strong>📞 Contact:</strong> 0915-250-8452
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Action Button -->
+      <button class="btn btn-primary btn-lg mt-3">
+        <i class="bi bi-pencil-square"></i> Edit Profile
+      </button>
     </div>
   </div>
 </div>

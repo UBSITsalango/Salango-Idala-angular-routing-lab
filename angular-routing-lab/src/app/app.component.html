@@ -22,8 +22,15 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="usersDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Users
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="usersDropdown">
+              <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="active">Profile</a></li>
+              <li><a class="dropdown-item" routerLink="/add" routerLinkActive="active">Add Profile</a></li>
+            </ul>
           </li>
         </ul>
       </div>
