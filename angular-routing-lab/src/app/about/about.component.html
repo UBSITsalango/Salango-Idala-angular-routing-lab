@@ -13,18 +13,5 @@
     <div class="alert alert-info">
       <strong>💡 Fun Fact:</strong> Our first project started in a small laboratory in Baguio with just coffee, code, and big dreams! ☕💻
     </div>
-
-    <!-- Show "Meet the Team" if profile is closed -->
-    <button *ngIf="!isProfileOpen" (click)="openProfile()" class="btn btn-outline-dark btn-lg mt-3">
-      <i class="bi bi-person-circle"></i> Meet the Team
-    </button>
-
-    <!-- Profile Section (Team Members) -->
-    <router-outlet></router-outlet>
-
-    <!-- Show "Back to About" only if profile is open -->
-    <button *ngIf="isProfileOpen" (click)="closeProfile()" class="btn btn-outline-primary mt-3">
-      <i class="bi bi-arrow-left"></i> Back to About
-    </button>
   </div>
 </div>

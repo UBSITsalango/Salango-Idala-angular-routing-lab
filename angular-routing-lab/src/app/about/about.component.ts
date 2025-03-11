@@ -10,17 +10,4 @@ import { Router, ActivatedRoute, RouterModule } from '@angular/router';
   styleUrls: ['./about.component.css'] 
 })
 export class AboutComponent {
-  isProfileOpen = false; // Track profile state
-
-  constructor(private router: Router, private route: ActivatedRoute) {}
-
-  openProfile() {
-    this.router.navigate(['profile'], { relativeTo: this.route }); // Open profile
-    this.isProfileOpen = true;
-  }
-
-  closeProfile() {
-    this.router.navigate(['/about']); // Close profile and go back to About
-    this.isProfileOpen = false;
-  }
 }
