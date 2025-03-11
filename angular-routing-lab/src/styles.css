@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background-image: linear-gradient(rgba(192, 192, 192, 0.5), rgba(82, 82, 82, 0.5)), url(https://static.vecteezy.com/system/resources/previews/024/743/302/non_2x/cat-seamless-pattern-paw-head-calico-black-kitten-scarf-isolated-repeat-wallpaper-cartoon-tile-background-illustration-vector.jpg);
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.692)), url(https://static.vecteezy.com/system/resources/previews/024/743/302/non_2x/cat-seamless-pattern-paw-head-calico-black-kitten-scarf-isolated-repeat-wallpaper-cartoon-tile-background-illustration-vector.jpg);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
