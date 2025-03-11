@@ -1,32 +1,51 @@
 <div class="container mt-5">
-  <div class="card shadow-lg border-0 rounded-lg overflow-hidden">
-
-    <!-- Profile Header -->
-    <div class="card-header bg-gradient text-black text-center p-4">
-      <h2 class="fw-bold">Profile</h2>
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <!-- Profile Card: Tyrone Salango -->
+      <div class="card shadow-lg border-0 rounded-lg overflow-hidden mb-4">
+        <div class="card-header bg-gradient text-black text-center p-4">
+          <h2 class="fw-bold">Profile 1</h2>
+        </div>
+        <div class="card-body d-flex flex-column align-items-center p-5">
+          <img [src]="userImage"
+               class="rounded-circle border border-3 border-primary p-1 profile-img"
+               alt="User Image">
+          <h2 class="fw-bold mt-3">{{ userName }}</h2>
+          <p class="text-muted fst-italic fs-5">{{ userRole }}</p>
+          <div class="alert alert-light text-center w-100 p-4 shadow-sm">
+            <p class="mb-3"><strong>📍 Location:</strong> {{ userLocation }}</p>
+            <p class="mb-3"><strong>📧 Email:</strong> <a href="mailto:{{ userEmail }}" class="text-decoration-none text-primary"> {{ userEmail }}</a></p>
+            <p class="mb-3"><strong>📞 Contact:</strong> <a href="tel:{{ userContact }}" class="text-decoration-none text-dark"> {{ userContact }}</a></p>
+          </div>
+          <button class="btn btn-primary btn-lg mt-3">
+            <i class="bi bi-pencil-square"></i> Edit Profile
+          </button>
+        </div>
+      </div>
     </div>
 
-    <!-- Profile Content -->
-    <div class="card-body d-flex flex-column align-items-center p-5">
-      <img [src]="userImage"
-           class="rounded-circle border border-3 border-primary p-1 profile-img"
-           alt="User Image">
-      
-      <!-- User Info -->
-      <h2 class="fw-bold mt-3">{{ userName }}</h2>
-      <p class="text-muted fst-italic fs-5">{{ userRole }}</p>
-
-      <!-- User Details -->
-      <div class="alert alert-light text-center w-100 p-4 shadow-sm">
-        <p class="mb-3"><strong>📍 Location:</strong> {{ userLocation }}</p>
-        <p class="mb-3"><strong>📧 Email:</strong> <a href="mailto:{{ userEmail }}" class="text-decoration-none text-primary"> {{ userEmail }}</a></p>
-        <p class="mb-3"><strong>📞 Contact:</strong> <a href="tel:{{ userContact }}" class="text-decoration-none text-dark"> {{ userContact }}</a></p>
+    <div class="col-lg-6">
+      <!-- Profile Card: Ashley Idala -->
+      <div class="card shadow-lg border-0 rounded-lg overflow-hidden mb-4">
+        <div class="card-header bg-gradient text-black text-center p-4">
+          <h2 class="fw-bold">Profile 2</h2>
+        </div>
+        <div class="card-body d-flex flex-column align-items-center p-5">
+          <img src="https://images.unsplash.com/photo-1550747528-cdb45925b3f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+               class="rounded-circle border border-3 border-primary p-1 profile-img"
+               alt="Ashley Idala">
+          <h2 class="fw-bold mt-3">Ashley Idala</h2>
+          <p class="text-muted fst-italic fs-5">UI Designer</p>
+          <div class="alert alert-light text-center w-100 p-4 shadow-sm">
+            <p class="mb-3"><strong>📍 Location:</strong> Baguio, Philippines</p>
+            <p class="mb-3"><strong>📧 Email:</strong> <a href="mailto:ashley@example.com" class="text-decoration-none text-primary"> ashley&#64;example.com</a></p>
+            <p class="mb-3"><strong>📞 Contact:</strong> <a href="tel:0915-250-8452" class="text-decoration-none text-dark"> 0915-250-8452</a></p>
+          </div>
+          <button class="btn btn-primary btn-lg mt-3">
+            <i class="bi bi-pencil-square"></i> Edit Profile
+          </button>
+        </div>
       </div>
-
-      <!-- Action Button -->
-      <button class="btn btn-primary btn-lg mt-3">
-        <i class="bi bi-pencil-square"></i> Edit Profile
-      </button>
     </div>
   </div>
 </div>
