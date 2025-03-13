@@ -24,8 +24,8 @@ pathMatch: 'full'
 },
 {
 path: '',
-
 redirectTo: '/parent',
 pathMatch: 'full'
+
 }
 ];
