@@ -2,7 +2,10 @@ import { Routes } from '@angular/router';
 import { ParentComponent } from './parent/parent.component';
 import { ChildOneComponent } from './parent/child-one/child-one.component';
 import { ChildTwoComponent } from './parent/child-two/child-two.component';
-import { AdminGuard } from './admin.guard'; // Import AdminGuard
+import { AdminComponent } from './admin/admin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { UsersComponent } from './admin/users/users.component';
+import { AdminGuard } from './admin.guard';
 
 export const routes: Routes = [
   {
@@ -15,11 +18,11 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    component: ParentComponent, // Use a proper AdminComponent if needed
+    component: AdminComponent, // Use the AdminComponent for the main admin route
     canActivate: [AdminGuard],
     children: [
-      { path: 'dashboard', component: ChildOneComponent },
-      { path: 'users', component: ChildTwoComponent }
+      { path: 'dashboard', component: DashboardComponent }, // Admin dashboard route
+      { path: 'users', component: UsersComponent } // Admin users route
     ]
   },
   {

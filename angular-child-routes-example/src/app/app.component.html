@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+  <div class="container d-flex">
+    <!-- Parent Dropdown -->
     <div class="dropdown">
       <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Parent
@@ -7,6 +8,17 @@
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" routerLink="/parent/child-one" routerLinkActive="active">Child One</a></li>
         <li><a class="dropdown-item" routerLink="/parent/child-two" routerLinkActive="active">Child Two</a></li>
+      </ul>
+    </div>
+
+    <!-- Admin Dropdown (Next to Parent Dropdown) -->
+    <div class="dropdown">
+      <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Admin
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/admin/dashboard" routerLinkActive="active">Admin Dashboard</a></li>
+        <li><a class="dropdown-item" routerLink="/admin/users" routerLinkActive="active">Admin Users</a></li>
       </ul>
     </div>
   </div>
