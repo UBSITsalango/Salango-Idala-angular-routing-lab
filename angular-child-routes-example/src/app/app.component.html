@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container d-flex">
+  <div class="container d-flex justify-content-start gap-3">
     <!-- Parent Dropdown -->
     <div class="dropdown">
       <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -11,7 +11,7 @@
       </ul>
     </div>
 
-    <!-- Admin Dropdown (Next to Parent Dropdown) -->
+    <!-- Admin Dropdown -->
     <div class="dropdown">
       <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Admin
@@ -21,7 +21,59 @@
         <li><a class="dropdown-item" routerLink="/admin/users" routerLinkActive="active">Admin Users</a></li>
       </ul>
     </div>
+
+    <!-- Modal Trigger Button -->
+    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#infoModal">Show Info</button>
   </div>
 </nav>
+
+<h1>{{ title }}</h1>
+
+<!-- User Input Form -->
+<div class="container mt-4">
+  <h3>Enter Your Information</h3>
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-control" [(ngModel)]="name">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Age</label>
+    <input type="number" class="form-control" [(ngModel)]="age">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control" [(ngModel)]="email">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Address</label>
+    <input type="text" class="form-control" [(ngModel)]="address">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Hobby</label>
+    <input type="text" class="form-control" [(ngModel)]="hobby">
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModalLabel">User Information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Name:</strong> {{ name }}</p>
+        <p><strong>Age:</strong> {{ age }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Address:</strong> {{ address }}</p>
+        <p><strong>Hobby:</strong> {{ hobby }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <router-outlet></router-outlet>
