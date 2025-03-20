@@ -7,48 +7,37 @@ import { AddProductsComponent } from './components/users/add-products/add-produc
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 
-// Layout Components
-import { HeaderComponent } from './layouts/header/header.component';
-import { SidebarComponent } from './layouts/sidebar/sidebar.component';
-import { FooterComponent } from './layouts/footer/footer.component';
-
 export const routes: Routes = [
-  // Root Route (with layout components)
+  // Default route for HomeComponent
+  { path: '', component: HomeComponent },
+
+  // Guest Routes
   {
-    path: '', 
-    component: HeaderComponent,
+    path: 'guest',
+    component: GuestComponent,
     children: [
-      {
-        path: '', // Home route
-        component: HomeComponent
-      },
-      {
-        path: 'guest', 
-        component: GuestComponent,
-        children: [
-          { path: 'view-products', component: ViewProductsComponent },
-          { path: 'add-products', component: AddProductsComponent },
-        ]
-      },
-      {
-        path: 'users', 
-        component: UsersComponent
-      }
+      { path: 'view-products', component: ViewProductsComponent },
     ],
   },
-  
+
+  // Users Route
+  { 
+    path: 'users', 
+    component: UsersComponent,
+    children: [
+      { path: 'add-products', component: AddProductsComponent },
+    ],
+  },
+
   // Authentication Routes
   {
     path: 'auth',
     children: [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
-    ]
+    ],
   },
-  
+
   // Fallback Route (optional)
-  {
-    path: '**',
-    redirectTo: '',
-  }
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

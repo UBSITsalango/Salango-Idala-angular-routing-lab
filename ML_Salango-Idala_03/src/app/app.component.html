@@ -1,7 +1,17 @@
 <app-header></app-header> <!-- Header Layout -->
-<app-sidebar></app-sidebar> <!-- Sidebar Layout -->
 
-<!-- Main Content -->
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar on the left -->
+    <div class="col-md-3">
+      <app-sidebar></app-sidebar> <!-- Sidebar Layout -->
+    </div>
+
+    <!-- Main content on the right, where router-outlet displays the Home page -->
+    <div class="col-md-9">
+      <router-outlet></router-outlet> <!-- Main Content (Home, etc.) -->
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer> <!-- Footer Layout -->
