@@ -1,17 +1,19 @@
-<app-header></app-header> <!-- Header Layout -->
+<div class="d-flex flex-column min-vh-100">
+  <app-header></app-header> <!-- Header Layout -->
 
-<div class="container-fluid">
-  <div class="row">
-    <!-- Sidebar on the left -->
-    <div class="col-md-3">
-      <app-sidebar></app-sidebar> <!-- Sidebar Layout -->
-    </div>
+  <div class="container-fluid flex-grow-1">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3">
+        <app-sidebar></app-sidebar>
+      </div>
 
-    <!-- Main content on the right, where router-outlet displays the Home page -->
-    <div class="col-md-9">
-      <router-outlet></router-outlet> <!-- Main Content (Home, etc.) -->
+      <!-- Main content -->
+      <div class="main-content col-md-9">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
-</div>
 
-<app-footer></app-footer> <!-- Footer Layout -->
+  <app-footer></app-footer> <!-- Footer Layout -->
+</div>

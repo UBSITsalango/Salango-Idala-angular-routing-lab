@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div class="container-fluid d-flex">
+    <div class="content flex-grow-1 d-flex justify-content-center align-items-center" style="min-height: 75vh;">
+      <div class="card p-5 shadow-lg" style="width: 450px; border-radius: 10px;">
+        <h2 class="text-center mb-4">Login</h2>
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+          </div>
+          <button type="submit" class="btn btn-primary w-100 py-2">Login</button>
+        </form>
+        <p class="text-center mt-3">
+          Don't have an account? <a routerLink="/auth/register">Register</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  

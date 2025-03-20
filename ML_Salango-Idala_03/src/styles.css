@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-fluid {
+    flex-grow: 1;
+    display: flex;
+}
+
+.row {
+    flex-grow: 1;
+}
+
+app-sidebar, router-outlet {
+    flex-grow: 1;
+}
