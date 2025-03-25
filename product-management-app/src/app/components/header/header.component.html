@@ -21,7 +21,7 @@
           </li>
         </ul>
   
-        <!-- Event binding example -->
+        <!-- Theme toggle button -->
         <div class="ms-auto">
           <button class="btn btn-light" (click)="toggleTheme()">Toggle Theme</button>
         </div>
@@ -30,9 +30,10 @@
   </nav>
   
   <!-- Property binding example with style -->
-  <div class="bg-light p-2 text-center" 
-       [style.background-color]="isDarkTheme ? '#343a40' : '#f8f9fa'"
-       [style.color]="isDarkTheme ? 'white' : 'black'">
+<div class="bg-light p-2 text-center"
+    [style.background-color]="isDarkTheme ? '#343a40 !important' : '#f8f9fa !important'"
+    [style.color]="isDarkTheme ? 'white' : 'black'">
     Currently viewing: {{ currentPage }}
-  </div>
+</div>
+
   
